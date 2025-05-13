@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: dim_countries
+    description: Table of unique countries.
+    columns:
+      - name: country_id
+        tests:
+          - unique
+          - not_null
+      - name: name
+  - name: user_session_source
+    description: Table containing behavioral information about user's session sources.
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null
+      - name: most_used_source
+      - name: first_source
+      - name: last_source
+      - name: total_session_count
+      - name: distinct_sources_count

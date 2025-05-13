@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: fact_user_orders_summary
+    description: >
+      Fact table containing aggregated metrics by user, such as total orders, total amount in USD, first and last order date.
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null
+  - name: fact_country_orders_summary
+    description: >
+      Fact table containing aggregated metrics by country.
+    columns:
+      - name: country_name
+        tests:
+          - unique
+          - not_null
+      - name: total_orders
+      - name: total_usd_amount
+      - name: total_users
+      - name: total_transacting_users
+      - name: first_order_date
+      - name: last_order_date

@@ -1,0 +1,9 @@
+# dbt artifacts
+dbt_packages/
+target/
+logs/
+.DS_STORE
+.vscode/
+*.pyc
+__pycache__/
+*.duckdb

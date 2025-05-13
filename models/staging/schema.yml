@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: stg__users
+    description: "Cleaned user data"
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null
+      - name: created_at
+      - name: country
+        tests:
+          - accepted_values:
+              values: ['US', 'UK', 'CA', 'IN']
+  
+  - name: stg__orders
+    description: "Cleaned order data"
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+      - name: created_at
+      - name: usd_amount
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "usd_amount > 0"
+  
+  - name: stg__sessions
+    description: "Cleaned session data"
+    columns:
+      - name: session_id
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+      - name: source
+      - name: created_at
