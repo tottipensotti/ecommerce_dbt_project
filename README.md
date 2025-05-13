@@ -57,11 +57,11 @@ Create a `fct_user_sessions` model that:
 
 ## ▶️ How to Run It
 
-1. Install dbt with DuckDB adapter:
+Install dbt with DuckDB adapter:
    ```bash
    pip install dbt-duckdb
   ```
-2. Initialize the project:
+Initialize the project:
   ```bash
   dbt debug
   dbt seed
@@ -69,7 +69,7 @@ Create a `fct_user_sessions` model that:
   dbt test
   dbt docs generate && dbt docs serve
   ```
-3. If using a custom `profiles.yml`, run with:
+If using a custom `profiles.yml`, run with:
   ```bash
   dbt run --profiles-dir ./dbt/ecommerce_project
   ```
