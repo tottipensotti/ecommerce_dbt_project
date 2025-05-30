@@ -4,12 +4,6 @@
     dist="user_id")
 }}
 
-{{ config(
-    materialized="table",
-    unique_key=["user_id", "session_id"],
-    dist="user_id")
-}}
-
 SELECT
     u.user_id,
     s.session_id,
