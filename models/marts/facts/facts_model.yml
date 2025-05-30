@@ -23,3 +23,20 @@ models:
       - name: total_transacting_users
       - name: first_order_date
       - name: last_order_date
+  - name: fact_user_sessions
+    description: >
+      Fact table containing all user's sessions
+      with additional information, such as source.
+    columns:
+      - name: user_id
+        tests:
+          - unique
+          - not_null
+      - name: session_id
+        tests:
+          - unique
+          - not_null
+      - name: session_start
+      - name: session_source
+      - name: is_first_session,
+      - name: is_last_session
